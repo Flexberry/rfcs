@@ -3,7 +3,7 @@
 - RFC Issue: 
 - Flexberry Issue: 
 
-# Интеграция Flexberry Service Bus с брокером сообщений лфалф
+# Интеграция Flexberry Service Bus с брокером сообщений kafka
 
 ## Краткое описание
 
