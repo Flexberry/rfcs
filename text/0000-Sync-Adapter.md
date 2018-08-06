@@ -157,6 +157,8 @@
 > Для обработки сообщений типа IDataChangeMessageResponse используется специальный обработчик вида IDataMessageHandler, по умолчанию DefaultDataChangeMessageHandler(задается в unity секции), для его инициализации используется класс DataChangeMessageHandlerFactory.
 
 **Описание работы стандартного обработчика DefaultDataChangeMessageHandler**
+![Блок схема алгоритма обработчика DefaultDataChangeMessageHandler](/Images/SyncAdapter/Sync-Adapter-BlockSyncMsgHandler.png)
+
 > Определяем тип полученного объекта, пытаясь найти его в таблице ObjectType, если тип не найден, то заносим его туда.
 > 
 > Определяем занесен ли ключ объекта в таблицу соответствий ключей Сonformity, если соответствие нашлось, то используем ключ приемника pkDest из таблицы соответствий, иначе собственный ключ объекта.
