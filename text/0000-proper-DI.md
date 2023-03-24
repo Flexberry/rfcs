@@ -32,6 +32,7 @@
 6. [Issue Рефактор SQLDataService и всего обвеса](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/issues/69).
 7. [Issue Рефактор настроек IAuditService](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/issues/70).
 8. [Issue Реализация CurrentWebHttpUser для netcoreapp](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/issues/141).
+9. [Discussion Выбор DI контейнера вместо Unity](https://github.com/orgs/Flexberry/discussions/16)
 
 UnityFactory во Flexberry-библиотеках:
 Применение UnityFactory в ORM: 
@@ -64,6 +65,11 @@ UnityFactory во Flexberry-библиотеках:
 - Удаление AppMode ([PR](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/pull/181)).
 4. Реализация возможности внедрения зависимостей в обработчик одата-функции или экшена. Желательно, чтобы внедрение производилось не в параметры метода, чтобы не смешивать зависимости и обычные параметры, а в конструктор ([PR](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/pull/51)).
 
+Дополнительно:
+1. Подготовить пример работы в новой версии, используя только встроенный DI.
+2. Подготовить пример работы в новой версии, используя Unity (однако проект Unity на настоящий момент приостановлен в развитии).
+3. Подготовить пример работы в новой версии, используя иной вариант DI (autofac, ninject или иной, у которого реализована поддержка Microsoft...DependencyInjection).
+
 ## Документирование и обучение
 
 Информация обо всех классах, что будут помечены как obsolete, должна изыматься из документации и вместо этих статей нужно добавить описание, как реализовать аналогичное поведение.
@@ -82,5 +88,4 @@ UnityFactory во Flexberry-библиотеках:
 1. Необходимо определиться, один (встроенный DI либо Unity DI) или два (встроенный DI + Unity DI) следует использовать в приложениях на платформе Flexberry под .net core, а так же определиться с реализацией конфигурирования через файлы конфигурации и, соответсвенно, с номенклатурой конфигурационных файлов (один формата json либо xml, один формата json для стандартного конфигурирования .net core приложения + app.config для конфигурирования log4net и Unity DI, либо один формата json + отдельный .config для каждой подсистемы, конфигурируемой через xml.
 2. Оценить целесообразность добавления абстракции ICurrentUserAccessor (Получение текущего пользователя ICurrentUser через абстракцию ICurrentUserAccessor ([PR](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/pull/181))).
 3. Исследовать обновление внешних зависимостей (npgsql, SqlClient и прочее).
-4. Исследовать варианты получения BS-ов без использования BusinessServerAttribute.
-5. Исследовать необходимость реализации функции "CurrentUser" в сервисе данных.
+4. Исследовать необходимость реализации функции "CurrentUser" в сервисе данных.
